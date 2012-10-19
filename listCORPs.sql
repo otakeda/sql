@@ -1,0 +1,22 @@
+-- Project Name : DeeCorp IF
+-- Author       : Eiji Sakuma
+-- Modified by  : 
+-- Date         : 2006/12/11
+-- DBMS         : Oracle 10g
+-- 
+set linesize 10000
+set pagesize 0
+set trimspool on
+set feedback off
+
+spool /home/sag/daf/import_csv/CSVCORP_LIST.tmp
+
+select distinct 
+  CORP_CD
+from
+  PORTAL_USER.M_CORP where corp_cd like '3%';
+
+spool off;
+
+
+exit;
